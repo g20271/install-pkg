@@ -45,8 +45,6 @@ set cindent
 set mouse=a
 set title
 
-colorscheme iceberg
-
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -143,5 +141,7 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 
 " Use ddc.
 call ddc#enable()
+
+colorscheme iceberg
 
 EOS
