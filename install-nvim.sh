@@ -115,7 +115,7 @@ call ddc#custom#patch_global('sources', ['vim-lsp'])
     call ddc#custom#patch_global('sourceOptions', {
         \ 'vim-lsp': {
         \   'matchers': ['matcher_head'],
-        \ 'minAutoCompleteLength':1},
+        \ 'minAutoCompleteLength':1,
         \   'mark': 'lsp',
         \ },
         \ })
