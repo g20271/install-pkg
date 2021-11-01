@@ -9,6 +9,8 @@
 chmod 700 install-*.sh
 
 ./install-proot.sh
+source $HOME/.bashrc
+
 ./install-nix.sh
 
 proot -b ~/.nix:/nix /bin/bash -c "echo neovimをインストールします; ./install-nvim.sh"
