@@ -28,9 +28,9 @@ if [ $? -eq 1 ] ; then
     echo "source $HOME/.nix-profile/etc/profile.d/nix.sh #For nix" >> $HOME/.bashrc
 fi
 
-grep -q "alias nix-on=\'proot -b ~/.nix:/nix /bin/bash\'" $HOME/.bashrc
+grep -q "alias nix-on='proot -b ~/.nix:/nix /bin/bash'" $HOME/.bashrc
 if [ $? -eq 1 ] ; then
-    echo "alias nix-on=\'proot -b ~/.nix:/nix /bin/bash\'" >> $HOME/.bashrc
+    echo "alias nix-on='proot -b ~/.nix:/nix /bin/bash'" >> $HOME/.bashrc
 fi
 
 echo "nix package managerのインストールが完了しました"
