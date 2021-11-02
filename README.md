@@ -10,7 +10,8 @@ git clone https://github.com/g20271/kuromajutsu
 cd kuromajutsu  
 chmod 700 install.sh  
 source ./install.sh  
-でエラー吐くので  
+でインストールできます  
+
+インストールしてもproot環境に入らないとnixやnvimは使えません  
 nix-on  
-source ./install-nvim.sh  
-するとnvimが使えるようになります  
+するとnvimが使えるシェルに入れます  
