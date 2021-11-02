@@ -13,7 +13,4 @@ source ./install.sh
 でエラー吐くので  
 nix-on  
 source ./install-nvim.sh  
-して  
-vim ~/.config/nvim/init.vim  
-でadminと書かれたところを自分のホームディレクトリに変更してください  
 するとnvimが使えるようになります  
