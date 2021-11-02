@@ -36,7 +36,7 @@ if [ $? -eq 1 ] ; then
    echo 'export LANG=ja_JP.UTF-8 ; export LC_ALL= ; export LC_CTYPE= #For neovim' >> $HOME/.bashrc
 fi
 
-cat << 'EOS' > $HOME/.config/nvim/init.vim
+sed "s|/home/admin|$HOME|" << 'EOS' > $HOME/.config/nvim/init.vim
 set tabstop=4
 set shiftwidth=4
 set expandtab
