@@ -31,10 +31,10 @@ if [ -e $HOME/.config/nvim/init.vim ]; then
   mv $HOME/.config/nvim/init.vim $HOME/.config/nvim/init.vim_
 fi
 
-grep -q 'export LANG=ja_JP.UTF-8 ; export LC_ALL= ; export LC_CTYPE= #For neovim' $HOME/.bashrc
-if [ $? -eq 1 ] ; then
-   echo 'export LANG=ja_JP.UTF-8 ; export LC_ALL= ; export LC_CTYPE= #For neovim' >> $HOME/.bashrc
-fi
+#grep -q 'export LANG=ja_JP.UTF-8 ; export LC_ALL= ; export LC_CTYPE= #For neovim' $HOME/.bashrc
+#if [ $? -eq 1 ] ; then
+#   echo 'export LANG=ja_JP.UTF-8 ; export LC_ALL= ; export LC_CTYPE= #For neovim' >> $HOME/.bashrc
+#fi
 
 sed "s|/home/admin|$HOME|" << 'EOS' > $HOME/.config/nvim/init.vim
 set tabstop=4
