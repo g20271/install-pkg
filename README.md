@@ -1,5 +1,6 @@
 # kuromajutsu
-PRootとnix package managerを使い、学校等の管理者権限を持てない環境用の、非Root環境で最新のC言語開発環境が作れる完全私的ツール。
+PRootとnix package managerを使い、学校等の管理者権限を持てない環境用の、非Root環境で最新のC言語開発環境が作れる完全私的ツール。   
+中身はとりあえず動けばいいの精神。
 
 # Installation
 ```
