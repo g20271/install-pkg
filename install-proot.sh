@@ -16,7 +16,7 @@ else
     echo "prootのインストールに失敗しました"
 fi
 
-
+touch $HOME/.bashrc
 grep -q "export PATH=\"\$PATH:$BIN_PATH\" #For proot" $HOME/.bashrc
 if [ $? -eq 1 ] ; then
     echo "環境変数を設定しました"
