@@ -8,4 +8,4 @@ source $HOME/.bashrc
 
 ./install-nix.sh
 source $HOME/.bashrc
-proot -b ~/.nix:/nix /bin/bash -c "echo neovimをインストールします; ./install-nvim.sh"
+exec proot -b ~/.nix:/nix /bin/bash -c "echo neovimをインストールします; ./install-nvim.sh"
