@@ -1,7 +1,7 @@
 #!/bin/bash
 #Using Proot Medhod from https://nixos.wiki/wiki/Nix_Installation_Guide#PRoot
 
-INSTALL_FILE_PATH=nix-2.3.16-x86_64-linux/install
+INSTALL_FILE_PATH=nix-2.9.2-x86_64-linux/install
 
 mkdir -p $HOME/.config/nix/
 touch $HOME/.config/nix/nix.conf
@@ -11,8 +11,8 @@ if [ $? -eq 1 ] ; then
 fi
 
 mkdir -p $HOME/.nix
-wget https://releases.nixos.org/nix/nix-2.3.16/nix-2.3.16-x86_64-linux.tar.xz -O nix-2.3.16-x86_64-linux.tar.xz
-tar -xvf nix-2.3.16-x86_64-linux.tar.xz
+wget https://releases.nixos.org/nix/nix-2.9.2/nix-2.9.2-x86_64-linux.tar.xz -O nix-2.9.2-x86_64-linux.tar.xz
+tar -xvf nix-2.9.2-x86_64-linux.tar.xz
 DEL_ROW=`grep -n "NIX_SSL_CERT_FILE\"" $INSTALL_FILE_PATH`
 DEL_ROW=${DEL_ROW%%:*}
 sed -i '193d' $INSTALL_FILE_PATH
