@@ -13,14 +13,15 @@ fi
 mkdir -p $HOME/.nix
 wget https://releases.nixos.org/nix/nix-2.9.2/nix-2.9.2-x86_64-linux.tar.xz -O nix-2.9.2-x86_64-linux.tar.xz
 tar -xvf nix-2.9.2-x86_64-linux.tar.xz
-DEL_ROW=`grep -n "NIX_SSL_CERT_FILE\"" $INSTALL_FILE_PATH`
-DEL_ROW=${DEL_ROW%%:*}
-sed -i '193d' $INSTALL_FILE_PATH
-sed -i '195d' $INSTALL_FILE_PATH
+#DEL_ROW=`grep -n "NIX_SSL_CERT_FILE\"" $INSTALL_FILE_PATH`
+#DEL_ROW=${DEL_ROW%%:*}
+#sed -i '193d' $INSTALL_FILE_PATH
+#sed -i '195d' $INSTALL_FILE_PATH
 #sed -i ''$DEL_LOW'd' $INSTALL_FILE_PATH
 #sed -i ''$(($DEL_LOW+2))'d' $INSTALL_FILE_PATH #Doesn't work...
 #Fix ca-certificate error
 
+export NIX_SSL_CERT_FILE="aaaa"
 proot -b ~/.nix:/nix /bin/bash $INSTALL_FILE_PATH
 
 grep -q "source $HOME/.nix-profile/etc/profile.d/nix.sh #For nix" $HOME/.bashrc
@@ -32,5 +33,11 @@ grep -q "alias nix-on='proot -b ~/.nix:/nix /bin/bash'" $HOME/.bashrc
 if [ $? -eq 1 ] ; then
     echo "alias nix-on='proot -b ~/.nix:/nix /bin/bash'" >> $HOME/.bashrc
 fi
+
+grep -q "export NIX_SSL_CERT_FILE=\"\$HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt\"" $HOME/.bashrc
+if [ $? -eq 1 ] ; then
+    echo "export NIX_SSL_CERT_FILE=\"\$HOME/.nix-profile/etc/ssl/certs/ca-bundle.crt\"" >> $HOME/.bashrc
+fi
+
 
 echo "nix package managerのインストールが完了しました"
